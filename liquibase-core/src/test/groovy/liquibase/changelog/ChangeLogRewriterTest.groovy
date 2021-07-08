@@ -99,7 +99,7 @@ class ChangeLogRewriterTest extends Specification {
 
         then:
         !result.success
-        result.message.matches(".*was not registered due to an error.*Permission denied.*")
+        result.message.matches(".*was not registered due to an error.*[Permission|Access] denied.*")
         !matcher.matches()
         !idMatcher.matches()
         changeLog.getChangeLogId() == null
